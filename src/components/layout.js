@@ -6,11 +6,12 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
-import Footer from "./footer"
+import EntrenudoImage from "./entrenudoimage"
+
+// import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ children }) => {
+  /*
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,20 +22,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  */
 
   return (
     <>
-      <a className="skip-link screen-reader-text" href="#primary">
-        Skip to the content
-      </a>
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        siteDescription={data.site.siteMetadata.description}
-      />
+      <EntrenudoImage src="/demo_image.jpg" alt="" />
       <main id="primary">
         {children}
       </main>
-      <Footer siteTitle={data.site.siteMetadata.title} />
     </>
   )
 }

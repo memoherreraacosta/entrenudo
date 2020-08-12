@@ -14,11 +14,6 @@ const IndexPage = () => {
         // Boolean indicating whether this is an article:
         // article
       />
-      <section>
-        <h1>This is where the front page content will eventually go.</h1>
-        <div><p>This file, index.js, functions as the homepage for the site.</p>
-        <p>It can be populated with pure HTML like this, and extended using all available Gatsby and React components.</p></div>
-      </section>
     </Layout>
   )
 }
@@ -26,6 +21,7 @@ const IndexPage = () => {
 
 export default IndexPage
 
+/*
 export default function Home() {
   return (
     <div>
@@ -49,7 +45,6 @@ export default function Home() {
   )
 }
 
-/*
  <style>
       * {
         margin: 0;

@@ -6,16 +6,16 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Opinionated Starter`,
-    titleTemplate: `%s · a starting point`,
+    title: `Entrenudo Estudio Floral`,
+    titleTemplate: `%s`,
     author: {
-      name: `Morten Rand-Hendriksen`,
-      summary: `a ballroom dancer playing at being a developer.`,
+      name: `Guillermo Herrera-Acosta`,
+      summary: `A client-admin WebApp for Entrenudo company`,
     },
-    description: `An opinionated starter for Gatsby`,
-    url: `https://something.or.other`,
-    logo: `static/logo.png`,
-    twitter: `mor10`,
+    description: `Entenudo Estudio Floral`,
+    url: `https://www.instagram.com/entrenudo/`,
+    logo: `static/logo.jpeg`,
+    instagram: `https://www.instagram.com/entrenudo/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
