@@ -5,6 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `Entrenudo Estudio Floral`,
+    titleTemplate: `%s`,
+    author: {
+      name: `Guillermo Herrera-Acosta`,
+      summary: `A client-admin WebApp for Entrenudo company`,
+    },
+    description: `Entenudo Estudio Floral`,
+    url: `https://www.instagram.com/entrenudo/`,
+    logo: `static/logo.jpeg`,
+    instagram: `https://www.instagram.com/entrenudo/`,
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+  ],
 }
