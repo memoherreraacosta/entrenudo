@@ -9,7 +9,7 @@ module.exports = {
     title: `Entrenudo Estudio Floral`,
     titleTemplate: `%s`,
     author: {
-      name: `Guillermo Herrera-Acosta`,
+      name: `Guillermo Herrera, Juan Quirino, Sergio Alvarado, Karol Gutierrez`,
       summary: `A client-admin WebApp for Entrenudo company`,
     },
     description: `Entenudo Estudio Floral`,
@@ -18,6 +18,6 @@ module.exports = {
     instagram: `https://www.instagram.com/entrenudo/`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+  
   ],
 }
