@@ -1,5 +1,4 @@
 import React from "react"
-
 import style from "./entrenudoimage.module.css"
 
 const EntrenudoImage = ({ src, alt }) => {
