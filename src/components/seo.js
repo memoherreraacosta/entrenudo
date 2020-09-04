@@ -40,6 +40,8 @@ const SEO = ({ title, description, image, pathname, article }) => (
             {seo.description && (
               <meta property="og:description" content={seo.description} />
             )}
+            {seo.image && <meta property="og:image" content={seo.image} />}
+            <link rel="canonical" href={seo.url} />
           </Helmet>
         </>
       )
