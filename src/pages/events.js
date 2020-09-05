@@ -9,7 +9,7 @@ import style from "./events.module.css"
 
 const IndexPage = ({ data }) => {
   return (
-      <Layout>
+    <Layout>
       <SEO
         title="Entrenudo"
         description="Entrenudo Estudio Floral"

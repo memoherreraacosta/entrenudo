@@ -49,7 +49,7 @@ export default AboutPage
 
 export const query = graphql`
   {
-    aboutImage: file(relativePath: { eq: "logo.jpeg" }) {
+    aboutImage: file(relativePath: { eq: "logo_blanco.jpeg" }) {
       childImageSharp {
         fixed(width: 300) {
           ...GatsbyImageSharpFixed
