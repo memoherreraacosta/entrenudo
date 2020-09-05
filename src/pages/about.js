@@ -18,13 +18,12 @@ const AboutPage = ({ data }) => {
         // article
       />
       <section className={style.wrapper}>
-        <Img fluid={data.headerImage.childImageSharp.fluid} alt="Robots" />
-        <h1 className={style.heading}>About this site</h1>
+        <h1 className={style.heading}>Acerca de Nosotros</h1>
         <div>
           <figure className={style.image}>
             <Img
-              fixed={data.robotImage.childImageSharp.fixed}
-              alt="Eileen the Robot"
+              fixed={data.aboutImage.childImageSharp.fixed}
+              alt=""
             />
           </figure>
 
@@ -50,16 +49,7 @@ export default AboutPage
 
 export const query = graphql`
   {
-    headerImage: file(
-      relativePath: { eq: "robots-androids-and-cyborgs-oh-my-1184x360.jpg" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 1184) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    robotImage: file(relativePath: { eq: "bubbles-disc.png" }) {
+    aboutImage: file(relativePath: { eq: "logo.jpeg" }) {
       childImageSharp {
         fixed(width: 300) {
           ...GatsbyImageSharpFixed
