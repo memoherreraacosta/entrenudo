@@ -9,12 +9,12 @@ import style from "./events.module.css"
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
+      <Layout>
       <SEO
-        title="Events"
-        description="Come join us at an event in the future!"
-        image="/logo.png"
-        pathname="/events"
+        title="Entrenudo"
+        description="Entrenudo Estudio Floral"
+        image="/logo_verde.jpeg"
+        pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
       />

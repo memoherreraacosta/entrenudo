@@ -10,10 +10,10 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="About the Project"
-        description="Information about the site."
-        image="/logo.png"
-        pathname="/about"
+        title="Entrenudo"
+        description="Entrenudo Estudio Floral"
+        image="/logo_verde.jpeg"
+        pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
       />
