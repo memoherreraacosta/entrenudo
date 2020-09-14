@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#center{
+  text-align: center;
+}
+
+#paragraph{
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  background: none;
+}
+#frame {
+  display: inline-block;
+  position: relative;
+}
+
+#canvas{
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: crimson;
+}
+
+.button {
+  background-color: rgb(250, 250, 102);
+  color: rgb(2, 2, 2);
+  padding: 16px;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(107, 107, 107);
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+.button:active {
+  background-color: #ffc72e;
+  box-shadow: 0 5px rgb(73, 73, 73);
+  transform: translateY(4px);
+}
+.button:hover {
+  background-color: #ffc72e;
+}
