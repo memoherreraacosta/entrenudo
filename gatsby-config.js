@@ -33,6 +33,10 @@ module.exports = {
         name: `Events`,
         link: `/events`,
       },
+      {
+        name: `Message`,
+        link: `/message`,
+      },
     ],
   },
   plugins: [
