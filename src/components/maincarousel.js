@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Carousel from 'react-bootstrap/Carousel'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import About from "../components/about"
 import style from './maincarousel.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainCarousel = () => {
     const [index, setIndex] = useState(0);
@@ -41,6 +42,7 @@ const MainCarousel = () => {
     ]
   
     return (
+      <>
       <Carousel activeIndex={index} onSelect={handleSelect} className={style.carousel} >
       {
           imageContent.map(el =>{
@@ -60,6 +62,8 @@ const MainCarousel = () => {
           })
         }
       </Carousel>
+      <About />
+      </>
     );
   }
   
