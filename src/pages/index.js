@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import EntrenudoImage from "../components/entrenudoimage"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainCarousel from "../components/maincarousel"
 
 
 const IndexPage = () => {
@@ -15,6 +17,7 @@ const IndexPage = () => {
         // Boolean indicating whether this is an article:
         // article
       />
+      <MainCarousel />
       <>
           <EntrenudoImage
             src="../static/images/demo_image.jpeg"
