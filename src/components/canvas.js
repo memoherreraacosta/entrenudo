@@ -1,8 +1,5 @@
 import React from "react"
 
-import style from "./canvas.css"
-
-
 
 export default class Canvas extends React.Component {
 
@@ -181,14 +178,13 @@ export default class Canvas extends React.Component {
   }
 }
 
-
+/*
+    ''' FUNCTION UNUSED '''
 
 function exportCanvasAsPNG(id, fileName) {
 
     var canvasElement = document.getElementById(id);
-
     var MIME_TYPE = "image/png";
-
     var imgURL = canvasElement.toDataURL(MIME_TYPE);
 
     var dlLink = document.createElement('a');
@@ -200,3 +196,4 @@ function exportCanvasAsPNG(id, fileName) {
     dlLink.click();
     document.body.removeChild(dlLink);
 }
+*/
