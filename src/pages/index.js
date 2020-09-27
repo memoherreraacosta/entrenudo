@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
         // article
       />
       <>
-        <MainCarousel />
         <MainBanner />
+        <MainDescription />
         <MainCarousel />
       </>
     </Layout>

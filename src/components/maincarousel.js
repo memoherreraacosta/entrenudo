@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Carousel from 'react-bootstrap/Carousel'
-import About from "../components/about"
 import style from './maincarousel.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -62,7 +61,6 @@ const MainCarousel = () => {
           })
         }
       </Carousel>
-      <About />
       </>
     );
   }
