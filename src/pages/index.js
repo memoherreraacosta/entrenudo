@@ -4,6 +4,7 @@ import About from "../components/about"
 import SEO from "../components/seo"
 import MainCarousel from "../components/maincarousel"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MainBanner from "../components/mainbanner";
 
 const IndexPage = ({ data }) => {
   return (
@@ -16,7 +17,11 @@ const IndexPage = ({ data }) => {
         // Boolean indicating whether this is an article:
         // article
       />
+      <>
         <MainCarousel />
+        <MainBanner />
+        <MainCarousel />
+      </>
     </Layout>
   )
 }
