@@ -1,0 +1,26 @@
+/* The hero image */
+.title {
+  width: 100%;
+  text-align: center;
+  color: #276769;
+  font-weight: bold;
+  font-size: 200%;
+  margin: 25px 0px;
+}
+
+.card_title {
+  text-align: center;
+  color: #276769;
+  font-size: 150%;
+}
+
+.media_banner{
+  text-align: center;
+  background-color: #FAC8BE;
+  color: #276769;
+  padding: 30px;
+  margin: 25px auto;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
