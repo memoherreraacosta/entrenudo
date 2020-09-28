@@ -44,3 +44,9 @@
 .button:hover {
   background-color: #ffc72e;
 }
+.form{
+  margin: 50px auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
+}
