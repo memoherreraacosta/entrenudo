@@ -4,34 +4,37 @@ import CardColumns from 'react-bootstrap/CardColumns'
 import Banner from "./banner";
 
 
-class PaletaSelector extends React.Component {
+class SizeSelector extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        selectedPaleta: -1,
+        selectedSize: -1,
         catalogData: [
             {
-                title: "Summer rise",
-                src: "images/catalog/summer_rise_1.jpg"
+                title: "Chico",
+                src: "images/catalog/summer_rise_1.jpg",
+                text: "12 - 15 tallos de flor"
             },
             {
-                title: "Warm hug",
-                src: "images/catalog/warm_hug_1.jpg"
+                title: "Mediano",
+                src: "images/catalog/warm_hug_1.jpg",
+                text: "16 - 17 tallos de flor"
             },
             {
-                title: "Serenity",
-                src: "images/catalog/serenity_1.jpg"
+                title: "Grande",
+                src: "images/catalog/serenity_1.jpg",
+                text: "18 - 22 tallos de flor"
             }
         ],
 
       };
     }
     
-    addToCart = (paleta, index) =>{
+    addToCart = (size, index) =>{
         this.setState({
-            selectedPaleta: index
+            selectedSize: index
         })
-        localStorage.setItem("paleta", paleta);
+        localStorage.setItem("size", size);
     }
 
     setBgCard = (index) =>{
@@ -47,7 +50,7 @@ class PaletaSelector extends React.Component {
     render() {
         return (
         <div>
-            <Banner texto="Escoge tu Paleta" />
+            <Banner texto="Escoge el tamaño" />
             <CardColumns>
                 {   this.state.catalogData.map( (el, index) =>{
                     return (
@@ -56,6 +59,7 @@ class PaletaSelector extends React.Component {
                                 <Card.Title >{el.title}</Card.Title>
                                 <Card.Img variant="top" src={el.src} />
                             </Card.Body>
+                            <Card.Text>{el.text}</Card.Text>
                         </Card>
                     )})
 
@@ -67,4 +71,4 @@ class PaletaSelector extends React.Component {
     }
   }
   
-export default PaletaSelector;
+export default SizeSelector;
