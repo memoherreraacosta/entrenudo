@@ -22,13 +22,9 @@ module.exports = {
         link: `/`,
       },
       {
-        name: `Catálogo`,
+        name: `Hacer pedido`,
         link: `/catalog`,
-      },
-      {
-        name: `Crear mensaje`,
-        link: `/message`,
-      },
+      }
     ],
   },
   plugins: [

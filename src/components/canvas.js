@@ -111,7 +111,10 @@ export default class Canvas extends React.Component {
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(body) // body data type must match "Content-Type" header
-    }).then(response => response.json()).then(data => console.log(data));
+    }).then(response => response.json()).then(data => {
+      alert("Tu pedido ha sido recibido con éxito. Nos comunicaremos contigo a la brevedad. Tú numero de pedido es " + data.id.substr(data.id.length - 5));
+      window.location.href = "/"
+    });
 
   }
 

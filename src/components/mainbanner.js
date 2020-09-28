@@ -8,7 +8,7 @@ const MainBanner = () => {
             <div className={style.hero_text}>
                 <h1>Personaliza y regala flores diferente</h1>
                 <p>Tus colores favoritos, tu presupuesto y tu manera de expresar el mansaje.</p>
-                <Button variant="success">Ordenar ahora</Button>
+                <Button variant="success" onClick={() => {window.location.href = "/catalog"}}>Ordenar ahora</Button>
             </div>
         </div>
     );
