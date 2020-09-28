@@ -4,7 +4,7 @@ import CardColumns from 'react-bootstrap/CardColumns'
 import Banner from "./banner";
 
 
-class CatalogContent extends React.Component {
+class PaletaSelector extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -30,18 +30,26 @@ class CatalogContent extends React.Component {
     addToCart = (paleta, index) =>{
         this.setState({
             selectedPaleta: index
+        }, () =>{
+            localStorage.setItem("paleta", paleta);
+            localStorage.setItem("paletaId", index);
         })
-        localStorage.setItem("paleta", paleta);
     }
 
-    setBgPaleta = (index) =>{
-        console.log(this.state.selectedPaleta, index)
-        return index === this.state.selectedPaleta ? "success" : ""
+    setBgCard = (index) =>{
+        return index === this.state.selectedPaleta ? "success" : "light"
     }
 
-    setColorPaleta = (index) =>{
-        console.log(this.state.selectedPaleta, index)
-        return index === this.state.selectedPaleta ? "white" : ""
+    setColorCard = (index) =>{
+        return index === this.state.selectedPaleta ? "white" : "dark"
+    }
+
+    componentDidMount(){
+        const id_str = localStorage.getItem("paletaId");
+        const id = id_str ? parseInt(id_str) : -1;
+        this.setState({
+            selectedPaleta: id
+        })
     }
 
 
@@ -53,7 +61,7 @@ class CatalogContent extends React.Component {
             <CardColumns>
                 {   this.state.catalogData.map( (el, index) =>{
                     return (
-                        <Card key={el.title} className="text-center" bg={this.setBgPaleta(index)} text={this.setColorPaleta(index)} onClick={ () => this.addToCart(el.title, index)}>
+                        <Card key={el.title} className="text-center" bg={this.setBgCard(index)} text={this.setColorCard(index)} onClick={ () => this.addToCart(el.title, index)}>
                             <Card.Body >
                                 <Card.Title >{el.title}</Card.Title>
                                 <Card.Img variant="top" src={el.src} />
@@ -69,4 +77,4 @@ class CatalogContent extends React.Component {
     }
   }
   
-export default CatalogContent;
+export default PaletaSelector;

@@ -33,8 +33,10 @@ class SizeSelector extends React.Component {
     addToCart = (size, index) =>{
         this.setState({
             selectedSize: index
+        }, () =>{
+            localStorage.setItem("size", size);
+            localStorage.setItem("sizeId", index);
         })
-        localStorage.setItem("size", size);
     }
 
     setBgCard = (index) =>{
@@ -45,6 +47,13 @@ class SizeSelector extends React.Component {
         return index === this.state.selectedSize ? "white" : "dark"
     }
 
+    componentDidMount(){
+        const id_str = localStorage.getItem("sizeId");
+        const id = id_str ? parseInt(id_str) : -1;
+        this.setState({
+            selectedSize: id
+        })
+    }
 
 
     render() {

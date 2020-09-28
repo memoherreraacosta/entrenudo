@@ -4,50 +4,55 @@ import CardColumns from 'react-bootstrap/CardColumns'
 import Banner from "./banner";
 
 
-class PaletaSelector extends React.Component {
+class StyleSelector extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        selectedPaleta: -1,
+        selectedStyle: -1,
         catalogData: [
             {
-                title: "Summer rise",
-                src: "images/catalog/summer_rise_1.jpg"
+                title: "Estándar",
+                src: "images/catalog/size_small.jpg",
             },
             {
-                title: "Warm hug",
-                src: "images/catalog/warm_hug_1.jpg"
-            },
-            {
-                title: "Serenity",
-                src: "images/catalog/serenity_1.jpg"
+                title: "Deluxe",
+                src: "images/catalog/size_medium.jpg"
             }
         ],
 
       };
     }
     
-    addToCart = (paleta, index) =>{
+    addToCart = (style, index) =>{
         this.setState({
-            selectedPaleta: index
+            selectedStyle: index
+        }, () =>{
+            localStorage.setItem("style", style);
+            localStorage.setItem("styleId", index);
         })
-        localStorage.setItem("paleta", paleta);
     }
 
     setBgCard = (index) =>{
-        return index === this.state.selectedSize ? "success" : "light"
+        return index === this.state.selectedStyle ? "success" : "light"
     }
 
     setColorCard = (index) =>{
-        return index === this.state.selectedSize ? "white" : "dark"
+        return index === this.state.selectedStyle ? "white" : "dark"
     }
 
+    componentDidMount(){
+        const id_str = localStorage.getItem("styleId");
+        const id = id_str ? parseInt(id_str) : -1;
+        this.setState({
+            selectedStyle: id
+        })
+    }
 
 
     render() {
         return (
         <div>
-            <Banner texto="Escoge tu Paleta" />
+            <Banner texto="Escoge el estilo" />
             <CardColumns>
                 {   this.state.catalogData.map( (el, index) =>{
                     return (
@@ -67,4 +72,4 @@ class PaletaSelector extends React.Component {
     }
   }
   
-export default PaletaSelector;
+export default StyleSelector;
