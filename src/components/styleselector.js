@@ -14,10 +14,12 @@ class StyleSelector extends React.Component {
             {
                 title: "Estándar",
                 src: "images/catalog/size_small.jpg",
+                text: "Flores comunes"
             },
             {
                 title: "Deluxe",
-                src: "images/catalog/size_medium.jpg"
+                src: "images/catalog/size_medium.jpg",
+                text: "Flores de alta gama"
             }
         ],
 
@@ -62,6 +64,7 @@ class StyleSelector extends React.Component {
                                 <Card.Title >{el.title}</Card.Title>
                                 <Card.Img variant="top" src={el.src} />
                             </Card.Body>
+                            <Card.Text>{el.text}</Card.Text>
                         </Card>
                     )})
 
