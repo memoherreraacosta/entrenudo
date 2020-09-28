@@ -1,59 +1,58 @@
-import React from "react";
+import React,  { useState } from "react";
 import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns'
 
 const CatalogContent = () => {
+    const [texto, setTexto] = useState(0);
+
     const catalogData = [
         {
-        title: "Título de las flores 1",
-        src: "images/wallet.jpg",
-        text: "Texto 1"
+            title: "Summer rise",
+            src: "images/catalog/summer_rise_1.jpg",
+            text: "Texto 1"
         },
         {
-            title: "Título de las flores 2",
-            src: "images/card.jpg",
+            title: "Warm hug",
+            src: "images/catalog/warm_hug_1.jpg",
             text: "Texto 2"
         },
         {
-            title: "Título de las flores 3",
-            src: "images/box.jpg",
+            title: "Serenity",
+            src: "images/catalog/serenity_1.jpg",
             text: "Texto 3"
-        },
-        {
-            title: "Título de las flores 4",
-            src: "images/wallet.jpg",
-            text: "Texto 4"
-        },
-        {
-            title: "Título de las flores 5",
-            src: "images/card.jpg",
-            text: "Texto 5"
-        },
-        {
-            title: "Título de las flores 6",
-            src: "images/box.jpg",
-            text: "Texto 6"
         }
     ];
 
-    const addToCart = () =>{
+    const addToCart = (paleta) =>{
         console.log("Producto añadido al carrito")
+        console.log(paleta)
+        fetch('http://localhost:8080/api/order')
+        .then(response => response.json())
+        .then(data => {
+            setTexto(JSON.stringify(data));
+        });
+        localStorage.setItem("paleta", paleta);
     }
+    
     return (
-        <CardColumns>
-            {   catalogData.map( el =>{
-                return (
-                    <Card className="text-center" onClick={addToCart}>
-                        <Card.Body>
-                            <Card.Title>{el.title}</Card.Title>
-                            <Card.Img variant="top" src={el.src} />
-                            <Card.Text>{el.text}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                )})
+        <div>
+            <CardColumns>
+                {   catalogData.map( el =>{
+                    return (
+                        <Card key={el.title} className="text-center" onClick={ () => addToCart(el.title)}>
+                            <Card.Body >
+                                <Card.Title >{el.title}</Card.Title>
+                                <Card.Img variant="top" src={el.src} />
+                                <Card.Text>{el.text}</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    )})
 
-            }
-        </CardColumns>
+                }
+            </CardColumns>
+            <p>{texto}</p>
+        </div>
+
     );
   }
   
