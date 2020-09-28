@@ -2,6 +2,7 @@ import React,  { useState } from "react";
 import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns'
 import Banner from "./banner";
+import style from "./selector.module.css";
 
 
 class PaletaSelector extends React.Component {
@@ -56,7 +57,7 @@ class PaletaSelector extends React.Component {
 
     render() {
         return (
-        <div>
+        <div className={style.cards} >
             <Banner texto="Escoge tu Paleta" />
             <CardColumns>
                 {   this.state.catalogData.map( (el, index) =>{
