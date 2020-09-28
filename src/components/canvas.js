@@ -1,5 +1,6 @@
 import React from "react"
-
+import Button from 'react-bootstrap/Button'
+import style from "./canvas.module.css";
 
 export default class Canvas extends React.Component {
 
@@ -69,14 +70,16 @@ export default class Canvas extends React.Component {
     var context = this.canvas.getContext("2d");
     var img = new Image();
     var canvas = this.canvas;
-    img.src = URL.createObjectURL(path.files[0]);
-    img.onload = function() {
-      var widthRatio = img.width/img.height;
-      var heightRatio = img.height/img.width;
-      var drawSize = size.value===""?"1":size.value/100;
-      var width = img.width<img.height? canvas.width*widthRatio*drawSize:  canvas.width*drawSize;
-      var height = img.height<img.width? canvas.height*heightRatio*drawSize:  canvas.height*drawSize;
-      context.drawImage(img,  x.value===""?"0":x.value , y.value===""?"0":y.value, width, height);
+    if(path.files[0] != null){
+      img.src = URL.createObjectURL(path.files[0]);
+      img.onload = function() {
+        var widthRatio = img.width/img.height;
+        var heightRatio = img.height/img.width;
+        var drawSize = size.value===""?"1":size.value/100;
+        var width = img.width<img.height? canvas.width*widthRatio*drawSize:  canvas.width*drawSize;
+        var height = img.height<img.width? canvas.height*heightRatio*drawSize:  canvas.height*drawSize;
+        context.drawImage(img,  x.value===""?"0":x.value , y.value===""?"0":y.value, width, height);
+      }
     }
   }
 
@@ -84,6 +87,28 @@ export default class Canvas extends React.Component {
     var dataURL = this.canvas.toDataURL("image/png");
     var imgData = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
     localStorage.setItem("imgData", imgData);
+
+    const body = {
+      colorPalette: localStorage.getItem("paleta"),
+      size: localStorage.getItem("size"),
+      style: localStorage.getItem("style"),
+      messageImage: imgData,
+      sender: "kjbkj",
+      senderPhone: "jbkjb"
+    }
+
+    fetch('http://localhost:8080/api/order', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(body) // body data type must match "Content-Type" header
+    }).then(response => response.json()).then( data => console.log(data));
+
   }
 
 
@@ -156,7 +181,7 @@ export default class Canvas extends React.Component {
     );
 
     return(
-      <div id="center">
+      <div id="center" className={style.center}>
         <div id="component">
           <button class="button" onClick={this.imageShow}>Agregar Imagen</button>
           <button class="button" onClick={this.textShow}>Agregar Texto</button>
@@ -167,9 +192,9 @@ export default class Canvas extends React.Component {
             <div>
               <button class="button" onClick={this.clean}>Limpiar</button>
             </div>
-            <canvas id="canvas" width="500" height="500" ref={this.myRef}></canvas>
+            <canvas className={style.canvas} id="canvas" width="500" height="500" ref={this.myRef}></canvas>
             <div>
-              <button class="button" onClick={this.next}>Siguiente</button>
+              <Button variant="success" size="lg" onClick={this.next}>Ordenar pedido</Button>
             </div>
           </div>
         </div>
@@ -177,23 +202,3 @@ export default class Canvas extends React.Component {
     )
   }
 }
-
-/*
-    ''' FUNCTION UNUSED '''
-
-function exportCanvasAsPNG(id, fileName) {
-
-    var canvasElement = document.getElementById(id);
-    var MIME_TYPE = "image/png";
-    var imgURL = canvasElement.toDataURL(MIME_TYPE);
-
-    var dlLink = document.createElement('a');
-    dlLink.download = fileName;
-    dlLink.href = imgURL;
-    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-
-    document.body.appendChild(dlLink);
-    dlLink.click();
-    document.body.removeChild(dlLink);
-}
-*/

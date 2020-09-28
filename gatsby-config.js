@@ -18,7 +18,7 @@ module.exports = {
     instagram: `https://www.instagram.com/entrenudo/`,
     menuLinks: [
       {
-        name: `Home`,
+        name: `Inicio`,
         link: `/`,
       },
       {
@@ -26,7 +26,7 @@ module.exports = {
         link: `/catalog`,
       },
       {
-        name: `Message`,
+        name: `Crear mensaje`,
         link: `/message`,
       },
     ],
