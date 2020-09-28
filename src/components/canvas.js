@@ -1,8 +1,7 @@
 import React from "react"
-
-import style from "./canvas.css"
-
-
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import style from "./canvas.module.css";
 
 export default class Canvas extends React.Component {
 
@@ -19,7 +18,7 @@ export default class Canvas extends React.Component {
     this.size = React.createRef();
     this.img = React.createRef();
     this.imgSize = React.createRef();
-    this.state = {showFile: false, showText: false};
+    this.state = { showFile: false, showText: false };
     this.imageShow = this.imageShow.bind(this);
     this.textShow = this.textShow.bind(this);
     this.addText = this.addText.bind(this);
@@ -27,6 +26,8 @@ export default class Canvas extends React.Component {
     this.addImage = this.addImage.bind(this);
     this.next = this.next.bind(this);
   }
+
+
 
   imageShow() {
     this.setState(prevState => ({
@@ -42,7 +43,7 @@ export default class Canvas extends React.Component {
     }));
   }
 
-  addText(){
+  addText() {
     var context = this.canvas.getContext("2d");
     var text = this.textRef.current;
     var x = this.x.current;
@@ -51,20 +52,20 @@ export default class Canvas extends React.Component {
     var size = this.size.current;
     var font = this.font.current;
 
-    context.font = size.value===""?"14":size.value +"px " + font.value;
-    context.fillStyle=color.value;
-    context.fillText(text.value, x.value===""?"0":x.value,y.value===""?"20":y.value);
+    context.font = size.value === "" ? "14" : size.value + "px " + font.value;
+    context.fillStyle = color.value;
+    context.fillText(text.value, x.value === "" ? "0" : x.value, y.value === "" ? "20" : y.value);
   }
 
-  clean(){
+  clean() {
     var context = this.canvas.getContext("2d");
-    var height=this.canvas.height;
-    var width=this.canvas.width;
-    var imageData=context.createImageData(width, height);
+    var height = this.canvas.height;
+    var width = this.canvas.width;
+    var imageData = context.createImageData(width, height);
     context.putImageData(imageData, 0, 0);
   }
 
-  addImage(){
+  addImage() {
     var path = this.img.current
     var x = this.imgx.current
     var y = this.imgy.current
@@ -72,21 +73,49 @@ export default class Canvas extends React.Component {
     var context = this.canvas.getContext("2d");
     var img = new Image();
     var canvas = this.canvas;
-    img.src = URL.createObjectURL(path.files[0]);
-    img.onload = function() {
-      var widthRatio = img.width/img.height;
-      var heightRatio = img.height/img.width;
-      var drawSize = size.value===""?"1":size.value/100;
-      var width = img.width<img.height? canvas.width*widthRatio*drawSize:  canvas.width*drawSize;
-      var height = img.height<img.width? canvas.height*heightRatio*drawSize:  canvas.height*drawSize;
-      context.drawImage(img,  x.value===""?"0":x.value , y.value===""?"0":y.value, width, height);
+    if (path.files[0] != null) {
+      img.src = URL.createObjectURL(path.files[0]);
+      img.onload = function () {
+        var widthRatio = img.width / img.height;
+        var heightRatio = img.height / img.width;
+        var drawSize = size.value === "" ? "1" : size.value / 100;
+        var width = img.width < img.height ? canvas.width * widthRatio * drawSize : canvas.width * drawSize;
+        var height = img.height < img.width ? canvas.height * heightRatio * drawSize : canvas.height * drawSize;
+        context.drawImage(img, x.value === "" ? "0" : x.value, y.value === "" ? "0" : y.value, width, height);
+      }
     }
   }
 
-  next(){
+  next() {
     var dataURL = this.canvas.toDataURL("image/png");
     var imgData = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
     localStorage.setItem("imgData", imgData);
+
+    const body = {
+      colorPalette: localStorage.getItem("paleta"),
+      size: localStorage.getItem("size"),
+      style: localStorage.getItem("style"),
+      messageImage: imgData,
+      sender: document.getElementById("nombre").value,
+      senderPhone: document.getElementById("telefono").value
+    }
+    console.log("body", body);
+
+    fetch('http://localhost:8080/api/order', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(body) // body data type must match "Content-Type" header
+    }).then(response => response.json()).then(data => {
+      alert("Tu pedido ha sido recibido con éxito. Nos comunicaremos contigo a la brevedad. La entrega será de 3 a 5 días hábiles. Tú numero de pedido es " + data.id.substr(data.id.length - 5));
+      window.location.href = "/"
+    });
+
   }
 
 
@@ -98,7 +127,7 @@ export default class Canvas extends React.Component {
     //exportCanvasAsPNG("canvas", "test.png");
   }
 
-  render(){
+  render() {
     const text = (
       <div id="text">
         <label>Texto:
@@ -120,15 +149,15 @@ export default class Canvas extends React.Component {
         <br></br>
         <label>Font:
           <select id="font" name="font" ref={this.font}>
-            <option value= "Verdana"> Verdana </option>
-            <option value= "Serif"> Serif </option>
-            <option value= "Arial"> Arial </option>
-            <option value= "Sans-Serif"> Sans-Serif </option>
-            <option value= "Tahoma"> Tahoma </option>
-            <option value= "Comic Sans MS"> Comic Sans MS </option>
-            <option value= "Impact"> Impact </option>
-            <option value= "Courier New"> Courier New </option>
-            <option value= "Lucida Console"> Lucida Console </option>
+            <option value="Verdana"> Verdana </option>
+            <option value="Serif"> Serif </option>
+            <option value="Arial"> Arial </option>
+            <option value="Sans-Serif"> Sans-Serif </option>
+            <option value="Tahoma"> Tahoma </option>
+            <option value="Comic Sans MS"> Comic Sans MS </option>
+            <option value="Impact"> Impact </option>
+            <option value="Courier New"> Courier New </option>
+            <option value="Lucida Console"> Lucida Console </option>
           </select>
         </label>
         <div>
@@ -139,27 +168,27 @@ export default class Canvas extends React.Component {
 
     const file = (
       <div id="file">
-          <label>Elegir imagen:
+        <label>Elegir imagen:
             <input type="file" id="myfile" name="myfile" ref={this.img}></input>
-          </label>
-          <br></br>
-          <label>X:
+        </label>
+        <br></br>
+        <label>X:
             <input type="text" id="imgx" name="imgx" size="2" ref={this.imgx} ></input>
-          </label>
-          <label>Y:
+        </label>
+        <label>Y:
             <input type="text" id="imgy" name="imgy" size="2" ref={this.imgy} ></input>
-          </label>
-          <label>Size (%):
+        </label>
+        <label>Size (%):
             <input type="text" id="imgSize" name="imgSize" size="2" ref={this.imgSize} ></input>
-          </label>
-          <div>
-            <button onClick={this.addImage}>Agregar Imagen</button>
-          </div>
+        </label>
+        <div>
+          <button onClick={this.addImage}>Agregar Imagen</button>
+        </div>
       </div>
     );
 
-    return(
-      <div id="center">
+    return (
+      <div id="center" className={style.center}>
         <div id="component">
           <button class="button" onClick={this.imageShow}>Agregar Imagen</button>
           <button class="button" onClick={this.textShow}>Agregar Texto</button>
@@ -170,33 +199,20 @@ export default class Canvas extends React.Component {
             <div>
               <button class="button" onClick={this.clean}>Limpiar</button>
             </div>
-            <canvas id="canvas" width="500" height="500" ref={this.myRef}></canvas>
+            <canvas className={style.canvas} id="canvas" width="500" height="500" ref={this.myRef}></canvas>
+            <Form.Group className={style.form}>
+              <Form.Control id="nombre" type="text" placeholder="Tu nombre" />
+              <br />
+              <Form.Control id="telefono" type="text" placeholder="Teléfono" />
+              <br />
+              <Form.Control type="text" placeholder="Tu dirección" />
+            </Form.Group>
             <div>
-              <button class="button" onClick={this.next}>Siguiente</button>
+              <Button variant="success" size="lg" onClick={this.next}>Ordenar pedido</Button>
             </div>
           </div>
         </div>
       </div>
     )
   }
-}
-
-
-
-function exportCanvasAsPNG(id, fileName) {
-
-    var canvasElement = document.getElementById(id);
-
-    var MIME_TYPE = "image/png";
-
-    var imgURL = canvasElement.toDataURL(MIME_TYPE);
-
-    var dlLink = document.createElement('a');
-    dlLink.download = fileName;
-    dlLink.href = imgURL;
-    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-
-    document.body.appendChild(dlLink);
-    dlLink.click();
-    document.body.removeChild(dlLink);
 }

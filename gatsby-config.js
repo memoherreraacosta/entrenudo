@@ -18,25 +18,13 @@ module.exports = {
     instagram: `https://www.instagram.com/entrenudo/`,
     menuLinks: [
       {
-        name: `Home`,
+        name: `Inicio`,
         link: `/`,
       },
       {
-        name: `Articles`,
-        link: `/articles`,
-      },
-      {
-        name: `About`,
-        link: `/about`,
-      },
-      {
-        name: `Events`,
-        link: `/events`,
-      },
-      {
-        name: `Message`,
-        link: `/message`,
-      },
+        name: `Hacer pedido`,
+        link: `/catalog`,
+      }
     ],
   },
   plugins: [
@@ -51,26 +39,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/content/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `events`,
-        path: `${__dirname}/content/events/`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-yaml`,
-      options: {
-        typeName: `Event`, // a fixed string
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `${__dirname}/content/articles/`,
       },
     },
     {

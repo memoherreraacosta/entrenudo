@@ -1,12 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
+import About from "../components/about"
 import SEO from "../components/seo"
-import EntrenudoImage from "../components/entrenudoimage"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import MainCarousel from "../components/maincarousel"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainBanner from "../components/mainbanner";
+import MainDescription from "../components/maindescription";
 
-
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO
@@ -17,12 +18,10 @@ const IndexPage = () => {
         // Boolean indicating whether this is an article:
         // article
       />
-      <MainCarousel />
       <>
-          <EntrenudoImage
-            src="../static/images/demo_image.jpeg"
-            alt=""
-          />
+        <MainBanner />
+        <MainDescription />
+        <MainCarousel />
       </>
     </Layout>
   )

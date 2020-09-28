@@ -1,0 +1,17 @@
+.wrapper {
+    margin: 0 auto;
+    max-width: var(--content-w-narrow);
+  }
+  
+  .heading {
+    margin: 5rem 0;
+    font-size: 1.6rem;
+    text-align: center;
+    color: rgb(36, 112, 40);
+  }
+  
+  .image {
+    margin-left: 2rem;
+    float: right;
+  }
+  
