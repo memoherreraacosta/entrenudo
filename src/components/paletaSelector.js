@@ -1,31 +1,26 @@
 import React,  { useState } from "react";
 import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns'
+import Banner from "./banner";
 
 
-class CatalogContent extends React.Component {
+class PaletaSelector extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         selectedPaleta: -1,
-        step: 0,
-        count: 0,
-        texto: "hola mundo",
         catalogData: [
             {
                 title: "Summer rise",
-                src: "images/catalog/summer_rise_1.jpg",
-                text: "Texto 1"
+                src: "images/catalog/summer_rise_1.jpg"
             },
             {
                 title: "Warm hug",
-                src: "images/catalog/warm_hug_1.jpg",
-                text: "Texto 2"
+                src: "images/catalog/warm_hug_1.jpg"
             },
             {
                 title: "Serenity",
-                src: "images/catalog/serenity_1.jpg",
-                text: "Texto 3"
+                src: "images/catalog/serenity_1.jpg"
             }
         ],
 
@@ -40,13 +35,11 @@ class CatalogContent extends React.Component {
     }
 
     setBgPaleta = (index) =>{
-        console.log(this.state.selectedPaleta, index)
-        return index === this.state.selectedPaleta ? "success" : ""
+        return index === this.state.selectedPaleta ?? "success"
     }
 
     setColorPaleta = (index) =>{
-        console.log(this.state.selectedPaleta, index)
-        return index === this.state.selectedPaleta ? "white" : ""
+        return index === this.state.selectedPaleta ?? "white"
     }
 
 
@@ -54,6 +47,7 @@ class CatalogContent extends React.Component {
     render() {
         return (
         <div>
+            <Banner texto="Escoge tu Paleta" />
             <CardColumns>
                 {   this.state.catalogData.map( (el, index) =>{
                     return (
@@ -61,7 +55,6 @@ class CatalogContent extends React.Component {
                             <Card.Body >
                                 <Card.Title >{el.title}</Card.Title>
                                 <Card.Img variant="top" src={el.src} />
-                                <Card.Text>{el.text}</Card.Text>
                             </Card.Body>
                         </Card>
                     )})
@@ -74,4 +67,4 @@ class CatalogContent extends React.Component {
     }
   }
   
-export default CatalogContent;
+export default PaletaSelector;

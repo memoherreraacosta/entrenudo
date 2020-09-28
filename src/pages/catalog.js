@@ -1,14 +1,14 @@
 import React from "react"
-import CatalogContent from "../components/catalogcontent"
+import PaletaSelector from "../components/paletaselector"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import style from "./catalog.module.css"
 
 const CatalogPage = () => {
     return (
         <Layout>
-            <h1>Cátalogo</h1>
-            <CatalogContent />
+            <div className={style.title}>Cátalogo</div>
+            <PaletaSelector />
         
         </Layout>
     )
