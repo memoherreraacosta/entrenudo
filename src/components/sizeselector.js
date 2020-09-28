@@ -12,17 +12,17 @@ class SizeSelector extends React.Component {
         catalogData: [
             {
                 title: "Chico",
-                src: "images/catalog/summer_rise_1.jpg",
+                src: "images/catalog/size_small.jpg",
                 text: "12 - 15 tallos de flor"
             },
             {
                 title: "Mediano",
-                src: "images/catalog/warm_hug_1.jpg",
+                src: "images/catalog/size_medium.jpg",
                 text: "16 - 17 tallos de flor"
             },
             {
                 title: "Grande",
-                src: "images/catalog/serenity_1.jpg",
+                src: "images/catalog/size_large.jpg",
                 text: "18 - 22 tallos de flor"
             }
         ],
