@@ -112,7 +112,7 @@ export default class Canvas extends React.Component {
       referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(body) // body data type must match "Content-Type" header
     }).then(response => response.json()).then(data => {
-      alert("Tu pedido ha sido recibido con éxito. Nos comunicaremos contigo a la brevedad. Tú numero de pedido es " + data.id.substr(data.id.length - 5));
+      alert("Tu pedido ha sido recibido con éxito. Nos comunicaremos contigo a la brevedad. La entrega será de 3 a 5 días hábiles. Tú numero de pedido es " + data.id.substr(data.id.length - 5));
       window.location.href = "/"
     });
 
@@ -204,6 +204,8 @@ export default class Canvas extends React.Component {
               <Form.Control id="nombre" type="text" placeholder="Tu nombre" />
               <br />
               <Form.Control id="telefono" type="text" placeholder="Teléfono" />
+              <br />
+              <Form.Control type="text" placeholder="Tu dirección" />
             </Form.Group>
             <div>
               <Button variant="success" size="lg" onClick={this.next}>Ordenar pedido</Button>
