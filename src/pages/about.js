@@ -12,7 +12,7 @@ const AboutPage = ({ data }) => {
       <SEO
         title="Entrenudo"
         description="Entrenudo Estudio Floral"
-        image="/logo_verde.jpeg"
+        image="/logos/logo_verde.jpeg"
         pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
@@ -27,18 +27,15 @@ const AboutPage = ({ data }) => {
             Somos un estudio ﬂoral que busca renovar la experiencia de regalar
             ﬂores.
           </p>
-          <p>
-          Nos enfocamos en la personalización y en los detalles.
-          </p>
+          <p>Nos enfocamos en la personalización y en los detalles.</p>
           <p>
             Trabajamos de manera personalizada para que nuestros servicios se
             adapten a tus necesidades, eligiendo así el tamaño, presupuesto y
             paleta de tu agrado para el diseño de tu bouquet.
           </p>
           <p>
-            Hacemos que cada
-            detalle cuente, desde el transporte de tus flores, el unboxing hasta
-            la manera de transmitir el mensaje. 
+            Hacemos que cada detalle cuente, desde el transporte de tus flores,
+            el unboxing hasta la manera de transmitir el mensaje.
           </p>
         </div>
       </section>

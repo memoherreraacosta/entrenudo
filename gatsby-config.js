@@ -22,12 +22,12 @@ module.exports = {
         link: `/`,
       },
       {
-        name: `Hacer pedido`,
-        link: `/catalog`,
-      },
-      {
         name: `Acerca de Entrenudo`,
         link: `/about`,
+      },
+      {
+        name: `Hacer pedido`,
+        link: `/catalog`,
       },
     ],
   },

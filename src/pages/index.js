@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <SEO
         title="Entrenudo"
         description="Entrenudo Estudio Floral"
-        image="/logo_verde.jpeg"
+        image="/logos/logo_verde.jpeg"
         pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
