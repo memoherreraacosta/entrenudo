@@ -22,9 +22,13 @@ module.exports = {
         link: `/`,
       },
       {
+        name: `Acerca de Entrenudo`,
+        link: `/about`,
+      },
+      {
         name: `Hacer pedido`,
         link: `/catalog`,
-      }
+      },
     ],
   },
   plugins: [

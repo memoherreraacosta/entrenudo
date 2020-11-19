@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby"
 import style from './maindescription.module.css'
 import Card from 'react-bootstrap/Card'
 import CardDeck from 'react-bootstrap/CardDeck'
@@ -32,7 +33,7 @@ const MainDescription = () => {
                 </CardDeck>
             </div>
             <div className = {style.media_banner}>
-                Síguenos @entrenudo
+                Síguenos en Instagram <Link to="https://www.instagram.com/entrenudo/">@entrenudo</Link>
             </div>
         </div>
     );

@@ -35,3 +35,22 @@ Header.defaultProps = {
 }
 
 export default Header
+
+/*
+export const query = graphql`
+  {
+    logoImage: file(relativePath: { eq: "./logos/logo.jpeg" }) {
+      childImageSharp {
+        fixed(width: 366, height: 374) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
+<Img
+fixed={data.logoImage.childImageSharp.fixed}
+alt={siteTitle}
+className={style.site_logo}
+/>
+*/

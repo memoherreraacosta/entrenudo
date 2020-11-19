@@ -1,4 +1,4 @@
-import React,  { useState } from "react";
+import React from "react";
 import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns'
 import Banner from "./banner";

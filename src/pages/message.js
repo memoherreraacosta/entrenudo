@@ -1,4 +1,3 @@
-
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,7 +9,7 @@ const MessagePage = () => {
       <SEO
         title="Entrenudo"
         description="Entrenudo Estudio Floral"
-        image="/logo_verde.jpeg"
+        image="/logos/logo_verde.jpeg"
         pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
@@ -21,6 +20,5 @@ const MessagePage = () => {
     </Layout>
   )
 }
-
 
 export default MessagePage

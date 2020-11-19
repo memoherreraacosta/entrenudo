@@ -4,7 +4,7 @@ body, html {
 
 /* The hero image */
 .hero_image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("./../../content/images/26-de-julio.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("./../../content/images/description/26-de-julio.jpg");
   height: 620px;
   background-position: center;
   background-repeat: no-repeat;

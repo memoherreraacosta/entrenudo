@@ -1,11 +1,11 @@
 import React from "react"
+
 import Layout from "../components/layout"
-import About from "../components/about"
 import SEO from "../components/seo"
 import MainCarousel from "../components/maincarousel"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import MainBanner from "../components/mainbanner";
 import MainDescription from "../components/maindescription";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const IndexPage = ({ data }) => {
   return (
@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <SEO
         title="Entrenudo"
         description="Entrenudo Estudio Floral"
-        image="/logo_verde.jpeg"
+        image="/logos/logo_verde.jpeg"
         pathname="/:id"
         // Boolean indicating whether this is an article:
         // article
