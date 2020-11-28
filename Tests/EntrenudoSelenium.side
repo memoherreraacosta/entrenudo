@@ -1,0 +1,21 @@
+{
+  "id": "a94f47f7-8746-481c-af6b-3a569ae006b9",
+  "version": "2.0",
+  "name": "Entrenudo",
+  "url": "http://localhost:8000",
+  "tests": [{
+    "id": "176dccde-b7bf-4463-b3a9-79bd08c59924",
+    "name": " Footer contiene hipervínculos a las redes sociales de la empresa",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "619bbb66-6d74-449f-933b-fb8fa90a03f8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8000/"],
+  "plugins": []
+}
