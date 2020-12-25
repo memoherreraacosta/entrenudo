@@ -15,8 +15,6 @@ const IndexPage = ({ data }) => {
         description="Entrenudo Estudio Floral"
         image="/logos/logo_verde.jpeg"
         pathname="/:id"
-        // Boolean indicating whether this is an article:
-        // article
       />
       <>
         <MainBanner />
