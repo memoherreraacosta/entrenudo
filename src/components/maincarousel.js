@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import Img from "gatsby-image"
+
 import Carousel from 'react-bootstrap/Carousel'
+
 import style from './maincarousel.module.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const MainCarousel = () => {
     const [index, setIndex] = useState(0);

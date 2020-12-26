@@ -6,7 +6,6 @@ import Img from "gatsby-image"
 import MainNav from "./mainnav"
 import style from "./header.module.css"
 
-
 const Header = ({ data, siteTitle, siteDescription, menuLinks }) => (
   <header id="site-header" className={style.masthead} role="banner">
     <div className={style.masthead_info}>
@@ -20,24 +19,14 @@ const Header = ({ data, siteTitle, siteDescription, menuLinks }) => (
         <div className={style.site_description}>{siteDescription}</div>
       </Link>
     </div>
-    <MainNav menuLinks={menuLinks} />
+    <MainNav menuLinks={menuLinks}/>
   </header>
 )
 
 export default function MyHeader(props) {
   return (
     <StaticQuery
-      query={graphql`
-        query {
-          file(relativePath: { eq: "logos/logo.jpeg" }) {
-            childImageSharp {
-              fixed(width: 150, height: 120) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-      `}
+      query={query}
       render={data => <Header data={data} {...props} />}
     />
   )
@@ -52,3 +41,15 @@ Header.defaultProps = {
   siteTitle: ``,
   siteDescription: ``,
 }
+
+const query = graphql`
+  query {
+    file(relativePath: { eq: "logos/logo.jpeg" }) {
+      childImageSharp {
+        fixed(width: 150, height: 120) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
