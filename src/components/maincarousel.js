@@ -14,8 +14,6 @@ const MainCarousel = ({ data }) => {
     setIndex(selectedIndex)
   }
 
-  const imagesContainer = data.allFile.nodes
-
   return (
     <>
       <Carousel
@@ -23,12 +21,12 @@ const MainCarousel = ({ data }) => {
         onSelect={handleSelect}
         className={style.carousel}
       >
-        {imagesContainer.map(el => {
+        {data.allFile.edges.map(edge => {
           return (
             <Carousel.Item>
               <Img
                 className={style.carousel_img}
-                fluid={el.src}
+                fluid={edge.node.childImageSharp.fluid}
                 alt="Carousel item"
               />
               <Carousel.Caption>
@@ -45,14 +43,15 @@ const MainCarousel = ({ data }) => {
 
 const query = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "flowers" } }) {
-      nodes {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_noBase64
+    allFile(filter: { relativeDirectory: { eq: "flowers" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
-        relativePath
       }
     }
   }
@@ -63,35 +62,3 @@ export default function MyMainCarousel() {
     <StaticQuery query={query} render={data => <MainCarousel data={data} />} />
   )
 }
-
-/*
-const imageContent = [
-    {
-      src: "images/flowers/flowers_1.jpg",
-    },
-    {
-      src: "images/flowers/flowers_2.jpg",
-    },
-    {
-      src: "images/flowers/flowers_3.jpg",
-    },
-    {
-      src: "images/flowers/flowers_4.jpg",
-    },
-    {
-      src: "images/flowers/flowers_5.jpg",
-    },
-    {
-      src: "images/flowers/flowers_6.jpg",
-    },
-    {
-      src: "images/flowers/flowers_7.jpg",
-    },
-    {
-      src: "images/flowers/flowers_8.jpg",
-    },
-    {
-      src: "images/flowers/flowers_9.jpg",
-    },
-  ]
-*/
