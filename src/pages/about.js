@@ -14,8 +14,6 @@ const AboutPage = ({ data }) => {
         description="Entrenudo Estudio Floral"
         image="/logos/logo_verde.jpeg"
         pathname="/:id"
-        // Boolean indicating whether this is an article:
-        // article
       />
       <section className={style.wrapper}>
         <h1 className={style.heading}>Acerca de Nosotros</h1>

@@ -23,8 +23,6 @@ const CatalogPage = () => {
         description="Entrenudo Estudio Floral"
         image="/logo_verde.jpeg"
         pathname="/:id"
-        // Boolean indicating whether this is an article:
-        // article
       />
       <>
         <div className={style.title}>Cátalogo</div>

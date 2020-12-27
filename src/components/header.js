@@ -1,18 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
+import Img from "gatsby-image"
 
 import MainNav from "./mainnav"
 import style from "./header.module.css"
 
-const Header = ({ siteTitle, siteDescription, menuLinks }) => (
+const Header = ({ data, siteTitle, siteDescription, menuLinks }) => (
   <header id="site-header" className={style.masthead} role="banner">
     <div className={style.masthead_info}>
       <Link to="/">
-        <img
-          src="/logo.jpeg"
-          width="366"
-          height="374"
+        <Img
+          fixed={data.file.childImageSharp.fixed}
           alt={siteTitle}
           className={style.site_logo}
         />
@@ -34,23 +33,22 @@ Header.defaultProps = {
   siteDescription: ``,
 }
 
-export default Header
-
-/*
-export const query = graphql`
-  {
-    logoImage: file(relativePath: { eq: "./logos/logo.jpeg" }) {
+const query = graphql`
+  query {
+    file(relativePath: { eq: "logos/logo.jpeg" }) {
       childImageSharp {
-        fixed(width: 366, height: 374) {
+        fixed(width: 150, height: 120) {
           ...GatsbyImageSharpFixed
         }
       }
     }
   }
 `
-<Img
-fixed={data.logoImage.childImageSharp.fixed}
-alt={siteTitle}
-className={style.site_logo}
-/>
-*/
+export default function MyHeader(props) {
+  return (
+    <StaticQuery
+      query={query}
+      render={data => <Header data={data} {...props} />}
+    />
+  )
+}

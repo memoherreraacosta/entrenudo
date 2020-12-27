@@ -10,6 +10,9 @@ class SizeSelector extends React.Component {
     this.state = {
       selectedSize: -1,
       catalogData: [
+        // These images are fetched from the 'public' directory
+        // the images (not paths) that are fetched from GraphQL
+        // comes from the 'content/images' directory
         {
           title: "Chico",
           src: "images/catalog/size_small.jpg",
