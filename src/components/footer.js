@@ -5,8 +5,10 @@ import style from "./footer.module.css"
 const Footer = ({ siteTitle }) => (
   <footer className={style.colophon}>
     <>
-      Síguenos en Instagram{" "}
-      <a href="https://www.instagram.com/entrenudo/">@{siteTitle}</a>
+      Síguenos en Instagram
+      <a href="https://www.instagram.com/entrenudo/">
+        {" "}@{siteTitle}
+      </a>
     </>
   </footer>
 )

@@ -23,15 +23,6 @@ const Header = ({ data, siteTitle, siteDescription, menuLinks }) => (
   </header>
 )
 
-export default function MyHeader(props) {
-  return (
-    <StaticQuery
-      query={query}
-      render={data => <Header data={data} {...props} />}
-    />
-  )
-}
-
 Header.propTypes = {
   siteTitle: PropTypes.string,
   siteDescription: PropTypes.string,
@@ -53,3 +44,11 @@ const query = graphql`
     }
   }
 `
+export default function MyHeader(props) {
+  return (
+    <StaticQuery
+      query={query}
+      render={data => <Header data={data} {...props} />}
+    />
+  )
+}
