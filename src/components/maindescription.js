@@ -1,16 +1,19 @@
 import React from "react"
+import {StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
 import style from "./maindescription.module.css"
 import Card from "react-bootstrap/Card"
 import CardDeck from "react-bootstrap/CardDeck"
 
-const MainDescription = () => {
+const MainDescription = ({ data }) => {
   return (
     <>
       <div className={style.title}>Lo que nos diferencia</div>
       <>
         <CardDeck>
           <Card>
-            <Card.Img variant="top" src="images/wallet.jpg" />
+            <Img variant="top" fluid={data.walletImg.childImageSharp.fluid} />
             <Card.Body>
               <Card.Title className={style.card_title}>
                 Personalización
@@ -18,7 +21,7 @@ const MainDescription = () => {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src="images/box.jpg" />
+            <Img variant="top" fluid={data.boxImg.childImageSharp.fluid} />
             <Card.Body>
               <Card.Title className={style.card_title}>
                 Detalles que cuentan
@@ -26,7 +29,7 @@ const MainDescription = () => {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src="images/card.jpg" />
+            <Img variant="top" fluid={data.cardImg.childImageSharp.fluid} />
             <Card.Body>
               <Card.Title className={style.card_title}>
                 Exprésalo diferente
@@ -39,4 +42,37 @@ const MainDescription = () => {
   )
 }
 
-export default MainDescription
+const query = graphql`
+  query {
+    walletImg: file(relativePath: { eq: "description/wallet.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    boxImg: file(relativePath: { eq: "description/box.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cardImg: file(relativePath: { eq: "description/card.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+export default function MyMainDescription(props) {
+  return (
+    <StaticQuery
+      query={query}
+      render={data => <MainDescription data={data} />}
+    />
+  )
+}

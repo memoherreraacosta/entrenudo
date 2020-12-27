@@ -19,7 +19,7 @@ const Header = ({ data, siteTitle, siteDescription, menuLinks }) => (
         <div className={style.site_description}>{siteDescription}</div>
       </Link>
     </div>
-    <MainNav menuLinks={menuLinks}/>
+    <MainNav menuLinks={menuLinks} />
   </header>
 )
 

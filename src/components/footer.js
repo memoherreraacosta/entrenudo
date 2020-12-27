@@ -6,9 +6,7 @@ const Footer = ({ siteTitle }) => (
   <footer className={style.colophon}>
     <>
       Síguenos en Instagram
-      <a href="https://www.instagram.com/entrenudo/">
-        {" "}@{siteTitle}
-      </a>
+      <a href="https://www.instagram.com/entrenudo/"> @{siteTitle}</a>
     </>
   </footer>
 )
