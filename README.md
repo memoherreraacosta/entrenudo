@@ -25,6 +25,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     ```shell
     cd my-hello-world-starter/
+    npm install gatsby-transformer-json
     gatsby develop
     ```
 
@@ -65,6 +66,10 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
 6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Here you can find the multiple plugins that are installed at the project. you can download them at local running:
+    ```shell
+    npm install gatsby-transformer-json
+    ```
 
 7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
