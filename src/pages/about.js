@@ -16,7 +16,7 @@ const AboutPage = ({ data }) => {
         pathname="/:id"
       />
       <section className={style.wrapper}>
-        <h1 className={style.heading}>Acerca de Nosotros</h1>
+        <h4 className={style.heading}>Acerca de Nosotros</h4>
         <div>
           <figure className={style.image}>
             <Img fixed={data.aboutImage.childImageSharp.fixed} alt="" />
@@ -45,7 +45,7 @@ export default AboutPage
 
 export const query = graphql`
   {
-    aboutImage: file(relativePath: { eq: "main_banner.jpg" }) {
+    aboutImage: file(relativePath: { eq: "logos/main_banner.jpg" }) {
       childImageSharp {
         fixed(width: 300) {
           ...GatsbyImageSharpFixed
