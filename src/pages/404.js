@@ -43,7 +43,7 @@ export const pageQuery = graphql`
     }
     image_404: file(relativePath: { eq: "logos/404.jpeg" }) {
       childImageSharp {
-        fixed(height: 400) {
+        fixed(height: 349) {
           ...GatsbyImageSharpFixed
         }
       }

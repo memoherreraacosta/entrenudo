@@ -8,14 +8,12 @@ const AboutComponent = ({ data }) => {
   return (
     <section className={style.wrapper}>
       <h4 className={style.heading}>Acerca de Entrenudo</h4>
-      <div>
-        <Img fixed={data.aboutImage.childImageSharp.fixed} alt="" />
-        <p/>
+      <>
+        <p />
         <p>
           Somos un estudio ﬂoral que busca renovar la experiencia de regalar
-          ﬂores.
+          ﬂores donde nos enfocamos en la personalización y en los detalles.
         </p>
-        <p>Nos enfocamos en la personalización y en los detalles.</p>
         <p>
           Trabajamos de manera personalizada para que nuestros servicios se
           adapten a tus necesidades, eligiendo así el tamaño, presupuesto y
@@ -25,16 +23,19 @@ const AboutComponent = ({ data }) => {
           Hacemos que cada detalle cuente, desde el transporte de tus flores, el
           unboxing hasta la manera de transmitir el mensaje.
         </p>
-      </div>
+      </>
+      <center>
+        <Img fixed={data.aboutImage.childImageSharp.fixed} alt="" />
+      </center>
     </section>
   )
 }
 
 const query = graphql`
   {
-    aboutImage: file(relativePath: { eq: "logos/main_banner.jpg" }) {
+    aboutImage: file(relativePath: { eq: "logos/banner.jpeg" }) {
       childImageSharp {
-        fixed(width: 500) {
+        fixed(width: 1100) {
           ...GatsbyImageSharpFixed
         }
       }
