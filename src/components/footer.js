@@ -5,12 +5,10 @@ import { StaticQuery, graphql } from "gatsby"
 import style from "./footer.module.css"
 
 const Footer = ({ data, siteTitle }) => (
-  <>
     <footer className={style.colophon}>
       <Img fixed={data.file.childImageSharp.fixed} />
       {siteTitle} © {new Date().getFullYear()}
     </footer>
-  </>
 )
 
 const query = graphql`
