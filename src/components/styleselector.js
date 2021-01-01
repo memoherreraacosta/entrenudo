@@ -16,12 +16,12 @@ class StyleSelector extends React.Component {
         {
           title: "Estándar",
           src: "images/catalog/size_small.jpg",
-          text: "Flores comunes",
+          text: "Flores de gama esándar \n + $15",
         },
         {
           title: "Deluxe",
           src: "images/catalog/size_medium.jpg",
-          text: "Flores de alta gama",
+          text: "Flores de alta gama \n + $25",
         },
       ],
     }

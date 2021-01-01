@@ -10,11 +10,11 @@ module.exports = {
     titleTemplate: `%s`,
     author: {
       name: `Guillermo Herrera, Juan Quirino, Sergio Alvarado, Karol Gutierrez`,
-      summary: `A client-admin WebApp for Entrenudo company`,
+      summary: `A client WebApp for Entrenudo company`,
     },
     description: `Estudio Floral`,
-    url: `https://entrenudo.com`,
-    logo: `static/logo_verde.jpeg`,
+    url: `https://www.instagram.com/entrenudo/`,
+    logo: `content/images/logos/logo.jpeg`,
     instagram: `https://www.instagram.com/entrenudo/`,
     menuLinks: [
       {
@@ -22,11 +22,7 @@ module.exports = {
         link: `/`,
       },
       {
-        name: `Acerca de Entrenudo`,
-        link: `/about`,
-      },
-      {
-        name: `Hacer pedido`,
+        name: `Cotiza tu pedido`,
         link: `/catalog`,
       },
     ],
@@ -73,7 +69,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: `standalone`,
-        icon: `static/logo_verde.jpeg`, // This path is relative to the root of the site.
+        icon: `content/images/logos/logo.jpeg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,

@@ -1,5 +1,5 @@
 import React from "react"
-import {StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import style from "./maindescription.module.css"
@@ -9,7 +9,7 @@ import CardDeck from "react-bootstrap/CardDeck"
 const MainDescription = ({ data }) => {
   return (
     <>
-      <div className={style.title}>Lo que nos diferencia</div>
+      <div className={style.title}>¿Qué nos hace diferentes?</div>
       <>
         <CardDeck>
           <Card>
@@ -38,6 +38,9 @@ const MainDescription = ({ data }) => {
           </Card>
         </CardDeck>
       </>
+      <div className={style.media_banner}>
+        Síguenos <a href="https://www.instagram.com/entrenudo/">@entrenudo</a>
+      </div>
     </>
   )
 }

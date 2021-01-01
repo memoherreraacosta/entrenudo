@@ -2,10 +2,11 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import AboutComponent from "../components/about"
 import MainCarousel from "../components/maincarousel"
-import MainBanner from "../components/mainbanner";
-import MainDescription from "../components/maindescription";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import MainBanner from "../components/mainbanner"
+import MainDescription from "../components/maindescription"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const IndexPage = ({ data }) => {
   return (
@@ -18,6 +19,7 @@ const IndexPage = ({ data }) => {
       />
       <>
         <MainBanner />
+        <AboutComponent />
         <MainDescription />
         <MainCarousel />
       </>

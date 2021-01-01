@@ -21,8 +21,12 @@ const NotFoundPage = ({ data, location }) => {
       />
       <center>
         <Img fixed={data.image_404.childImageSharp.fixed} alt="" />
-        <h3>Alto ahi, Error 404</h3>
-        <p>La pagina que buscas, no existe :(</p>
+      </center>
+      <center>
+        <h3>Alto ahí, Error 404</h3>
+      </center>
+      <center>
+        <p>La página que buscas, no existe :(</p>
       </center>
     </Layout>
   )
@@ -36,10 +40,10 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
-    },
+    }
     image_404: file(relativePath: { eq: "logos/404.jpeg" }) {
       childImageSharp {
-        fixed(width: 400) {
+        fixed(height: 400) {
           ...GatsbyImageSharpFixed
         }
       }
