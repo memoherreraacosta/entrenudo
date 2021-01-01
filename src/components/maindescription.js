@@ -9,7 +9,7 @@ import CardDeck from "react-bootstrap/CardDeck"
 const MainDescription = ({ data }) => {
   return (
     <>
-      <div className={style.title}>Lo que nos diferencia</div>
+      <div className={style.title}>¿Qué nos hace diferentes?</div>
       <>
         <CardDeck>
           <Card>

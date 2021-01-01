@@ -30,8 +30,7 @@ const MainCarousel = ({ data }) => {
                 alt="Carousel item"
               />
               <Carousel.Caption>
-                <h3>Entrenudo</h3>
-                <p>Una manera diferente de regalar flores</p>
+                <h3>Una manera diferente de regalar flores</h3>
               </Carousel.Caption>
             </Carousel.Item>
           )

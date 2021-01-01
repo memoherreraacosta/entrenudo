@@ -24,11 +24,19 @@ p {
 
 h1,
 h2,
-h3,
+h3 {
+  padding: 1.6rem;
+}
 h4,
 h5,
 h6 {
   letter-spacing: -0.0415625em;
   font-weight: 700;
   line-height: 1.15;
+}
+
+center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

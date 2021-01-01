@@ -9,12 +9,28 @@ import style from "./catalog.module.css"
 
 const CatalogPage = () => {
   const checkValidSelection = () => {
+    const size_price = {
+      Chico: 10,
+      Mediano: 20,
+      Grande: 30,
+    }
+
+    const style_price = {
+      Estándar: 15,
+      Deluxe: 25,
+    }
+
     const paleta = localStorage.getItem("paleta")
     const size = localStorage.getItem("size")
-    const style = localStorage.getItem("style")
-    paleta && size && style
-      ? (window.location.href = "/message")
+    const catalog_style = localStorage.getItem("style")
+    paleta && size && catalog_style
+      ? alert(
+          "La cotizacion del producto es de: " +
+            (Number(size_price[size]) + Number(style_price[catalog_style]))
+        )
       : alert("Selección incompleta")
+
+    localStorage.clear()
   }
   return (
     <Layout>
@@ -25,7 +41,7 @@ const CatalogPage = () => {
         pathname="/:id"
       />
       <>
-        <div className={style.title}>Cátalogo</div>
+        <div className={style.title}>Catálogo</div>
         <PaletaSelector />
         <SizeSelector />
         <StyleSelector />

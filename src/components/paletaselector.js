@@ -60,7 +60,7 @@ class PaletaSelector extends React.Component {
   render() {
     return (
       <div className={style.cards}>
-        <Banner texto="Escoge tu Paleta" />
+        <Banner texto="Escoge tu paleta" />
         <CardColumns>
           {this.state.catalogData.map((el, index) => {
             return (

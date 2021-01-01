@@ -16,17 +16,17 @@ class SizeSelector extends React.Component {
         {
           title: "Chico",
           src: "images/catalog/size_small.jpg",
-          text: "12 - 15 tallos de flor",
+          text: "12 - 15 tallos de flor \n $10",
         },
         {
           title: "Mediano",
           src: "images/catalog/size_medium.jpg",
-          text: "18 - 22 tallos de flor",
+          text: "18 - 22 tallos de flor \n $20",
         },
         {
           title: "Grande",
           src: "images/catalog/size_large.jpg",
-          text: "25 - 30 tallos de flor",
+          text: "25 - 30 tallos de flor \n $30",
         },
       ],
     }

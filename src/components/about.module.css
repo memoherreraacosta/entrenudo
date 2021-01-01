@@ -1,17 +1,25 @@
 .wrapper {
-    margin: 0 auto;
-    max-width: var(--content-w-narrow);
-  }
-  
-  .heading {
-    margin: 5rem 0;
-    font-size: 1.6rem;
+    width: 500px;
+    display: block;
+    margin: 25px auto;
+}
+
+.heading {
+    width: 100%;
     text-align: center;
-    color: rgb(36, 112, 40);
+    color: #276769;
+    font-weight: bold;
+    font-size: 200%;
+    margin: 25px 0;
+}
+
+.paragraph {
+    float: left;
+    margin-bottom: 30px;
+}
+
+center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .image {
-    margin-left: 2rem;
-    float: right;
-  }
-  
