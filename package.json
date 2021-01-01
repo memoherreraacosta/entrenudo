@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-lil-learning-gatsby",
+  "name": "entrenudo-webapp",
   "private": true,
-  "description": "An opinionated starter for Gatsby",
+  "description": "Entrenudo project made using Gatsby framework based on React",
   "version": "0.1.0",
-  "author": "Morten Rand-Hendriksen, LinkedIn Learning",
+  "author": "Guillermo Herrera, Juan Quirino, Sergio Alvarado, Karol Gutierrez. Based on Morten Rand-Hendriksen (LinkedIn Learning)",
   "license": "LinkedIn Learning Exercise Files License Agreement",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
@@ -34,7 +34,7 @@
     "prettier": "2.0.4"
   },
   "keywords": [
-    "gatsby, linkedin learning, lil"
+    "gatsby, entrenudo"
   ],
   "scripts": {
     "build": "gatsby build",
@@ -47,9 +47,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LinkedInLearning/learning-gatsby-2833047"
+    "url": "https://github.com/memoherreraacosta/entrenudo"
   },
   "bugs": {
-    "url": "https://github.com/LinkedInLearning/learning-gatsby-2833047/issues"
+    "url": "https://github.com/memoherreraacosta/entrenudo/issues"
   }
 }
